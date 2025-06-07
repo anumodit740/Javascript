@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Always use https://fonts.google.com -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./weather.css">
+
+</head>
+<body>
+   <div class="wrapper">
+      <h1> Weather App </h1>
+    <!-- Search section -->
+    <div class="tab-container">
+      <p class="tab" data-userWeather>Your Weather</p>
+     <p class="tab" data-searchWeather>Search Weather</p>
+</div>
+<!-- Container because for different button have to show near same code -->
+<div class="weather-container"> 
+    <!-- Grant Location container first UI -->
+    <div class="grant-location-container subContainer">
+   <img src="../userAsset/WhatsApp Image 2025-06-05 at 09.46.16_23b2a8a2.jpg" 
+   width="80" height="80" loading="lazy">   
+<p>grant Location Access</p>
+<p>Allow Access to get weather information</p>
+<button class="btn" data-grantAccess>Grant Access</button>
+</div>
+<!-- Second UI search form-->
+ <form class="form-container" data-searchForm> 
+<input placeholder="Search for City......" data-searchInput>
+<button class="btn" type="submit">
+    <img src="../userAsset/WhatsApp Image 2025-06-05 at 09.46.17_fa9cd25d.jpg " width="20" height="20" loading="lazy">
+</button>
+ </form>
+<!-- Loading screen -->
+ <div class="subContainer loading-container">
+          <!-- <video width="150" height="150" controls>
+            <source src="../userAsset/WhatsApp Video 2025-06-05 at 09.46.16_e071abc6.mp4" type="">
+          </video> -->
+          <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjM1czBsaWYyYmU3ZHBmdnF
+          sNHg5YmJtcXR4NXRoc2Rnd2x0eHBzOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RgzryV9nRCMHPVVXPV/giphy.gif"
+           width="150" height="150">
+          <p>Loading</p>
+        </div>
+<!-- Show Weather Info -->
+<div class="user-info-container subContainer">
+  <!-- city name and flag(js) -->
+          <div class="name">
+            <p data-cityName></p>
+            <img data-countryIcon >
+          </div>
+<!-- weather description(js) -->
+          <p data-weatherDesc></p>
+          <!-- Weatther Icon -->
+          <img data-weatherIcon>
+<!-- temperature --> 
+          <p data-temp></p>
+<!-- 3 cards parameter -->
+          <div class="parameter-container">
+            <!-- Wind Speed -->
+            <div class="parameter">
+              <img src="../userAsset/WhatsApp Image 2025-06-05 at 09.46.18_ffb46334.jpg" alt="#">
+              <p>windspeed</p>
+              <p class="parameterValue" data-windspeed></p>
+            </div>
+
+            <!-- Humidity -->
+            <div class="parameter">
+              <img src="../userAsset/WhatsApp Image 2025-06-05 at 09.46.17_eb0a4146.jpg" alt="#">
+              <p>humidity</p>
+              <p class="parameterValue" data-humidity></p>
+            </div>
+
+            <!-- Wind Speed -->
+            <div class="parameter">
+              <img src="../userAsset/WhatsApp Image 2025-06-05 at 09.46.14_07735570.jpg" alt="#">
+              <p>clouds</p>
+              <p class="parameterValue" data-clouds ></p>
+            </div>
+          </div>
+        </div>
+<!-- Error Location not found  -->
+<div class="error-container subContainer">
+          <img src="../userAsset/WhatsApp Image 2025-06-05 at 09.46.13_8d5d4284.jpg" data-errorimg width="120" height="120">
+          <p data-errortext=""></p>
+          <button class="btn" data-errorbutton="">Retry Now</button>
+        </div>
+
+</div>
+   </div>
+    <script src="./weather.js"></script>
+</body>
+</html>
+
+
+<!-- {"coord":{"lon":17.77,"lat":14.33},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":
+{"temp":29.45,"feels_like":27.7,"temp_min":29.45,"temp_max":29.45,"pressure":1011,"humidity":12,"sea_level":1011,"grnd_level":977},"visibility":10000,
+"wind":{"speed":4.23,"deg":36,"gust":9.34},"clouds":{"all":0},
+"dt":1749190440,"sys":{"country":"TD","sunrise":1749183571,"sunset":1749230159},"timezone":3600,"id":7603255,"name":"Barh el Gazel Region","cod":200} -->
